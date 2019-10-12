@@ -1,0 +1,19 @@
+{
+  "name": "joyhuang/push",
+  "description": "小米推送，华为推送，VIVO推送，OPPO推送，魅族推送，极光推送",
+  "authors": [
+    {
+      "name": "Huang zhi jiao"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "joyhuang\\Push\\": "src/",
+      "joyhuang\\Http\\": "src/Http/"
+    }
+  }
+}
