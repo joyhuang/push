@@ -168,7 +168,7 @@ class VivoPush
 
         $response = $this->_request->post($this->_url . '/message/send', [
             'headers' => $this->_headers,
-            'data'    => $data
+            'data'    => json_encode($data)
         ]);
         return $response->getResponseArray();
 
@@ -271,11 +271,11 @@ class VivoPush
             "clientCustomMap" => $aData,
         ];
 
-        $this->_headers[] = "authToken:" . $this->_accessToken;
+        $this->_headers['authToken'] = $this->_accessToken;
 
-        $response = $this->_request->post($this->_url . '/message/send', [
+        $response = $this->_request->post($this->_url . '/message/saveListPayload', [
             'headers' => $this->_headers,
-            'data'    => $data
+            'data'    => json_encode($data)
         ]);
         return $response->getResponseArray();
     }
