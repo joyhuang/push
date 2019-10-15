@@ -128,6 +128,7 @@ class Push
                     $config          = static::$_platform[ $itemPlatform ];
                     $config['redis'] = static::$_redis;
                     $push            = new $service($config);
+                    $aliasArr        = array_unique($aliasArr);
                     if ( count($aliasArr) > 1 ) {
                         if ( method_exists($push, 'sendBatchMessage') ) {
                             $itemResult = $push->sendBatchMessage($title, $message, $aliasArr, $aData);
