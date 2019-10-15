@@ -1,5 +1,5 @@
 <?php
-namespace joyhuang\huaweiPush;
+namespace joyhuang\Push;
 use joyhuang\Http\Http;
 use joyhuang\Http\Request;
 use joyhuang\Http\Response;
@@ -11,7 +11,7 @@ use joyhuang\Http\Response;
  * Time: 14:26
  */
 
-class huaweiPush
+class HuaweiPush
 {
     private $_accessTokenInfo;
     private $_clientId;
@@ -236,7 +236,7 @@ class huaweiPush
     public function test(  )
     {
         $url = sprintf('https://push-api.cloud.huawei.com/v1/%s/messages:send','101004303');
-        $testStr = '{ "validate_only": false, "message": { "notification": { "title": "Big News", "body": "This is a Big News!" }, "android": { "notification": { "title": "Noti in Noti title", "body": "Noti in Noti body", "click_action": { "type": 1, "intent": "#Intent;compo=com.rvr/.Activity;S.W=U;end" } } }, "token": ["AAWWHI94sgUR2RU5_P1ZptUiwLq7W8XWJO2LxaAPuXw4_HOJFXnBlN-q5_3bwlxVW_SHeDPx_s5bWW-9DjtWZsvcm9CwXe1FHJg0u-D2pcQPcb3sTxDTJeiwEb9WBPl_9w "] } }';
+        $testStr = '{ "validate_only": false, "message": { "notification": { "title": "Big News", "body": "This is a Big News!" }, "android": { "notification": { "title": "Noti in Noti title", "body": "Noti in Noti body", "click_action": { "type": 1, "intent": "#Intent;compo=com.rvr/.Activity;S.W=U;end" } } } } }';
 
         $response = $this->_http->post($url, [
             'headers' => [
